@@ -19,7 +19,7 @@ SET visitas:home 0
 
 **Saída obtida:**
 ```
-(cole aqui a saída do comando)
+(0)
 ```
 
 **Print da tela:**
