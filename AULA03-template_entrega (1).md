@@ -48,7 +48,8 @@ GET visitas:home
 
 **Print da tela:**
 
-![passo 2 - simular acessos](cole-o-nome-da-imagem-aqui.png)
+![passo 2 - simular acessos](<img width="1917" height="1078" alt="tela1" src="https://github.com/user-attachments/assets/2304d7fa-08b9-4998-ad98-e108545249c1" />
+)
 
 ---
 
