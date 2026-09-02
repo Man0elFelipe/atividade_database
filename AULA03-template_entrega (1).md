@@ -24,7 +24,8 @@ SET visitas:home 0
 
 **Print da tela:**
 
-![passo 1 - criar contador](cole-o-nome-da-imagem-aqui.png)
+![passo 1 - criar contador](<img width="1917" height="1078" alt="Captura de tela 2026-08-24 233208" src="https://github.com/user-attachments/assets/3cc0d9b9-42be-4b68-a93f-14165f54da0b" />
+)
 
 ---
 
