@@ -24,8 +24,7 @@ SET visitas:home 0
 
 **Print da tela:**
 
-![passo 1 - criar contador](<img width="1917" height="1078" alt="tela1" src="https://github.com/user-attachments/assets/c5296c42-b5f0-44be-96c6-f46213f96d3b" />
-)
+![passo 1 - criar contador](/prints/tela01.png)
 
 ---
 
