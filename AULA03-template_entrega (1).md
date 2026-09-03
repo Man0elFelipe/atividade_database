@@ -1,10 +1,10 @@
 # Entrega — Atividade Prática Aula 3 (Redis Cloud)
 
 **Disciplina:** IBD-016 — Banco de Dados Não Relacional
-**Nome do aluno:** _(preencha aqui)_
-**Data de execução:** _(preencha aqui)_
-**Nome do banco criado no Redis Cloud:** _(preencha aqui)_
-**Ferramenta utilizada:** _(RedisInsight / redis-cli / Google Colab — preencha aqui)_
+**Nome do aluno:** _(Manoel Felipe Vieira Gomes)_
+**Data de execução:** _(02/09/2026)_
+**Nome do banco criado no Redis Cloud:** _(aula-03)_
+**Ferramenta utilizada:** _(Google Colab)_
 
 > Instruções: para cada passo, execute o comando indicado (via RedisInsight, `redis-cli` ou Google Colab) e cole a saída real obtida no campo correspondente, adicionando o print da tela logo abaixo. Se estiver usando o **Google Colab**, o print pode ser da célula executada com seu código e a saída exibida abaixo dela — não é necessário usar a sintaxe nativa do Redis, os métodos Python (`r.set()`, `r.get()`, etc.) são aceitos normalmente. Para inserir uma imagem no GitHub, arraste o arquivo de print para dentro desta caixa de edição — o link é gerado automaticamente no formato `![descrição](nome-da-imagem.png)`.
 
@@ -14,7 +14,8 @@
 
 **Comando/código executado:**
 ```
-SET visitas:home 0
+r.set("visitas:pagina", 0)
+r.get("visitas:pagina")
 ```
 
 **Saída obtida:**
@@ -32,23 +33,23 @@ SET visitas:home 0
 
 **Comandos/código executados:**
 ```
-INCR visitas:home
-INCR visitas:home
-INCR visitas:home
-INCR visitas:home
-INCR visitas:home
-GET visitas:home
+r.incr("visitas:pagina")
+r.incr("visitas:pagina")
+r.incr("visitas:pagina")
+r.incr("visitas:pagina")
+r.incr("visitas:pagina")
+
+r.get("visitas:pagina")
 ```
 
 **Saída obtida (valor final do GET):**
 ```
-(cole aqui a saída do comando)
+5
 ```
 
 **Print da tela:**
 
-![passo 2 - simular acessos](<img width="1917" height="1078" alt="tela1" src="https://github.com/user-attachments/assets/2304d7fa-08b9-4998-ad98-e108545249c1" />
-)
+![passo 2 - simular acessos](/prints/tela02.png)
 
 ---
 
@@ -56,18 +57,18 @@ GET visitas:home
 
 **Comandos/código executados:**
 ```
-EXPIRE visitas:home 300
-TTL visitas:home
+r.expire("visitas:pagina", 300)
+r.ttl("visitas:pagina")
 ```
 
 **Saída obtida:**
 ```
-(cole aqui a saída do comando)
+300
 ```
 
 **Print da tela:**
 
-![passo 3 - expiração TTL](cole-o-nome-da-imagem-aqui.png)
+![passo 3 - expiração TTL](/prints/tela03.png)
 
 ---
 
@@ -75,18 +76,20 @@ TTL visitas:home
 
 **Comandos/código executados:**
 ```
-HSET usuario:1 nome "SEU NOME AQUI" email "seuemail@exemplo.com"
-HGET usuario:1 nome
+r.hset("usuario:1", mapping={"nome": "Manoel", "email": "lipemanoel3@gmail.com"})
+r.hget("usuario:1", "Manoel")
+
+r.hgetall("usuario:1")
 ```
 
 **Saída obtida:**
 ```
-(cole aqui a saída do comando)
+{'nome': 'Manoel', 'email': 'lipemanoel3@gmail.com'}
 ```
 
 **Print da tela:**
 
-![passo 4 - hash usuario](cole-o-nome-da-imagem-aqui.png)
+![passo 4 - hash usuario](/prints/tela04.png)
 
 ---
 
@@ -95,7 +98,8 @@ HGET usuario:1 nome
 _Explique com suas palavras: por que o comando `INCR` é útil para um contador, e por que faz sentido usar `EXPIRE` nesse cenário?_
 
 ```
-(escreva aqui sua resposta)
+O comando `INCR` é importante para um contador porque aumenta o valor de uma chave, o que ajuda no controle de quantas vezes algo aconteceu. O `EXPIRE` faz sentido porque permite definir um tempo para o contador, evitando que ele fique armazenado no Redis o tempo todo.
+
 ```
 
 ---
